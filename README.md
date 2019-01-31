@@ -14,9 +14,8 @@ Thư mục bao gồm:
 Hướng dẫn sử dụng:
 - Tạo thư mục để lưu tất cả các file trên, gọi là abc.
 - Trong abc, cài đặt file GenInput.cpp và Solution.cpp.
-	Lưu ý:
 	File GenInput sinh input ra file input.txt
-	File Solution đọc input từ input.txt và sinh output ra file 		answer.txt
+	File Solution đọc input từ input.txt và sinh output ra file answer.txt
 - Compile lại file TestFormat.cpp (khuyên khích thông qua terminal):
 	cd đến mục abc -> Compile -> "./TestFormat".
 	Chương trình sẽ yêu cầu tên bài và số lượng test muốn tạo theo thứ tự tương ứng mình nhập vào.
@@ -28,6 +27,8 @@ Một số lưu ý khi sử dụng:
 - Nếu bạn không thích việc phải compile lại file TestFormat thì thay đổi biến delRunFile trong TestFormat thành false.
 
 Ví dụ về việc chạy chương trình:
+
 Ở đây mình giả dụ sinh test cho bài toán LIS quen thuộc
+
 Minh họa: https://imgur.com/a/7FzBsrB
 
