@@ -1,9 +1,10 @@
+#include <unistd.h>
 #include <bits/stdc++.h>
 using namespace std;
 
 const string inp = ".in";
 const string out = ".out";
-const bool delRunFile = true;
+const bool delRunFile = false;
 
 string TASK;
 int numTest, numDigit;
@@ -63,10 +64,11 @@ void Compile(string File) {
 }
 
 int main() {
+	srand (time (0));
 	Write (33, "Welcome to TestCreator\n\n");
 	Write (35, "  Your Problem 's name : "); cin >> TASK;
 	Write (35, "  Number of testcases : "); cin >> numTest; cout << '\n';
-	numDigit = numTest > 0 ? (int) log10 (numTest - 1) + 1 : 1;
+	numDigit = numTest > 0 ? (int) log10 (numTest) + 1 : 1;
 
 	CheckExist ("GenInput.cpp");
 	CheckExist ("Solution.cpp");
@@ -82,7 +84,7 @@ int main() {
 	Compile ("Solution");
 
 	Write (32, "  Start creating Testcase:\n\n");
-	for (int iTest = 0; iTest < numTest; iTest++) {
+	for (int iTest = 1; iTest <= numTest; iTest++) {
 		Write (31, "\t\u27A4  ");
 		Write (36, "Test "); 
 		Write (33, NumToString(iTest));
@@ -105,6 +107,7 @@ int main() {
 			cout << "\033[0;" << 37 << "m" << "Complete" << "\033[0m";
 			cout << "\033[0;" << 32 << "m" << " \u2713" << "\033[0m\n";
 		}
+		usleep (1000000);
 	}
 
 	if (fopen ("input.txt", "r")) {
